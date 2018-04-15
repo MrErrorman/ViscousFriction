@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.linkLabel15 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel13 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel12 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel10 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.PauseButton = new System.Windows.Forms.Button();
+            this.linkSetA0_90 = new System.Windows.Forms.LinkLabel();
+            this.linkSetA0_75 = new System.Windows.Forms.LinkLabel();
+            this.linkSetA0_60 = new System.Windows.Forms.LinkLabel();
+            this.linkSetA0_45 = new System.Windows.Forms.LinkLabel();
+            this.linkSetA0_30 = new System.Windows.Forms.LinkLabel();
+            this.linkSetA0_10 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_8 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_7 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_4 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_6 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_3 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_5 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_2 = new System.Windows.Forms.LinkLabel();
+            this.linkSetB_1 = new System.Windows.Forms.LinkLabel();
             this.StopButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.bVal = new System.Windows.Forms.NumericUpDown();
@@ -82,6 +84,7 @@
             this.botGr = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bVal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aVal)).BeginInit();
@@ -100,20 +103,21 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.linkLabel15);
-            this.groupBox2.Controls.Add(this.linkLabel14);
-            this.groupBox2.Controls.Add(this.linkLabel13);
-            this.groupBox2.Controls.Add(this.linkLabel12);
-            this.groupBox2.Controls.Add(this.linkLabel11);
-            this.groupBox2.Controls.Add(this.linkLabel10);
-            this.groupBox2.Controls.Add(this.linkLabel9);
-            this.groupBox2.Controls.Add(this.linkLabel8);
-            this.groupBox2.Controls.Add(this.linkLabel5);
-            this.groupBox2.Controls.Add(this.linkLabel7);
-            this.groupBox2.Controls.Add(this.linkLabel4);
-            this.groupBox2.Controls.Add(this.linkLabel6);
-            this.groupBox2.Controls.Add(this.linkLabel3);
-            this.groupBox2.Controls.Add(this.linkLabel2);
+            this.groupBox2.Controls.Add(this.PauseButton);
+            this.groupBox2.Controls.Add(this.linkSetA0_90);
+            this.groupBox2.Controls.Add(this.linkSetA0_75);
+            this.groupBox2.Controls.Add(this.linkSetA0_60);
+            this.groupBox2.Controls.Add(this.linkSetA0_45);
+            this.groupBox2.Controls.Add(this.linkSetA0_30);
+            this.groupBox2.Controls.Add(this.linkSetA0_10);
+            this.groupBox2.Controls.Add(this.linkSetB_8);
+            this.groupBox2.Controls.Add(this.linkSetB_7);
+            this.groupBox2.Controls.Add(this.linkSetB_4);
+            this.groupBox2.Controls.Add(this.linkSetB_6);
+            this.groupBox2.Controls.Add(this.linkSetB_3);
+            this.groupBox2.Controls.Add(this.linkSetB_5);
+            this.groupBox2.Controls.Add(this.linkSetB_2);
+            this.groupBox2.Controls.Add(this.linkSetB_1);
             this.groupBox2.Controls.Add(this.StopButton);
             this.groupBox2.Controls.Add(this.StartButton);
             this.groupBox2.Controls.Add(this.bVal);
@@ -135,163 +139,188 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Настройки объекта";
             // 
-            // linkLabel15
+            // PauseButton
             // 
-            this.linkLabel15.AutoSize = true;
-            this.linkLabel15.Location = new System.Drawing.Point(156, 134);
-            this.linkLabel15.Name = "linkLabel15";
-            this.linkLabel15.Size = new System.Drawing.Size(23, 13);
-            this.linkLabel15.TabIndex = 100;
-            this.linkLabel15.TabStop = true;
-            this.linkLabel15.Text = "90°";
+            this.PauseButton.Enabled = false;
+            this.PauseButton.Location = new System.Drawing.Point(125, 280);
+            this.PauseButton.Name = "PauseButton";
+            this.PauseButton.Size = new System.Drawing.Size(50, 23);
+            this.PauseButton.TabIndex = 101;
+            this.PauseButton.Text = "Пауза";
+            this.PauseButton.UseVisualStyleBackColor = true;
+            this.PauseButton.Click += new System.EventHandler(this.PauseButton_Click);
             // 
-            // linkLabel14
+            // linkSetA0_90
             // 
-            this.linkLabel14.AutoSize = true;
-            this.linkLabel14.Location = new System.Drawing.Point(127, 134);
-            this.linkLabel14.Name = "linkLabel14";
-            this.linkLabel14.Size = new System.Drawing.Size(23, 13);
-            this.linkLabel14.TabIndex = 18;
-            this.linkLabel14.TabStop = true;
-            this.linkLabel14.Text = "75°";
+            this.linkSetA0_90.AutoSize = true;
+            this.linkSetA0_90.Location = new System.Drawing.Point(156, 134);
+            this.linkSetA0_90.Name = "linkSetA0_90";
+            this.linkSetA0_90.Size = new System.Drawing.Size(23, 13);
+            this.linkSetA0_90.TabIndex = 100;
+            this.linkSetA0_90.TabStop = true;
+            this.linkSetA0_90.Text = "90°";
+            this.linkSetA0_90.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetA0_90_LinkClicked);
             // 
-            // linkLabel13
+            // linkSetA0_75
             // 
-            this.linkLabel13.AutoSize = true;
-            this.linkLabel13.Location = new System.Drawing.Point(98, 134);
-            this.linkLabel13.Name = "linkLabel13";
-            this.linkLabel13.Size = new System.Drawing.Size(23, 13);
-            this.linkLabel13.TabIndex = 18;
-            this.linkLabel13.TabStop = true;
-            this.linkLabel13.Text = "60°";
+            this.linkSetA0_75.AutoSize = true;
+            this.linkSetA0_75.Location = new System.Drawing.Point(127, 134);
+            this.linkSetA0_75.Name = "linkSetA0_75";
+            this.linkSetA0_75.Size = new System.Drawing.Size(23, 13);
+            this.linkSetA0_75.TabIndex = 18;
+            this.linkSetA0_75.TabStop = true;
+            this.linkSetA0_75.Text = "75°";
+            this.linkSetA0_75.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetA0_75_LinkClicked);
             // 
-            // linkLabel12
+            // linkSetA0_60
             // 
-            this.linkLabel12.AutoSize = true;
-            this.linkLabel12.Location = new System.Drawing.Point(69, 134);
-            this.linkLabel12.Name = "linkLabel12";
-            this.linkLabel12.Size = new System.Drawing.Size(23, 13);
-            this.linkLabel12.TabIndex = 18;
-            this.linkLabel12.TabStop = true;
-            this.linkLabel12.Text = "45°";
+            this.linkSetA0_60.AutoSize = true;
+            this.linkSetA0_60.Location = new System.Drawing.Point(98, 134);
+            this.linkSetA0_60.Name = "linkSetA0_60";
+            this.linkSetA0_60.Size = new System.Drawing.Size(23, 13);
+            this.linkSetA0_60.TabIndex = 18;
+            this.linkSetA0_60.TabStop = true;
+            this.linkSetA0_60.Text = "60°";
+            this.linkSetA0_60.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetA0_60_LinkClicked);
             // 
-            // linkLabel11
+            // linkSetA0_45
             // 
-            this.linkLabel11.AutoSize = true;
-            this.linkLabel11.Location = new System.Drawing.Point(40, 134);
-            this.linkLabel11.Name = "linkLabel11";
-            this.linkLabel11.Size = new System.Drawing.Size(23, 13);
-            this.linkLabel11.TabIndex = 18;
-            this.linkLabel11.TabStop = true;
-            this.linkLabel11.Text = "30°";
+            this.linkSetA0_45.AutoSize = true;
+            this.linkSetA0_45.Location = new System.Drawing.Point(69, 134);
+            this.linkSetA0_45.Name = "linkSetA0_45";
+            this.linkSetA0_45.Size = new System.Drawing.Size(23, 13);
+            this.linkSetA0_45.TabIndex = 18;
+            this.linkSetA0_45.TabStop = true;
+            this.linkSetA0_45.Text = "45°";
+            this.linkSetA0_45.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetA0_45_LinkClicked);
             // 
-            // linkLabel10
+            // linkSetA0_30
             // 
-            this.linkLabel10.AutoSize = true;
-            this.linkLabel10.Location = new System.Drawing.Point(11, 134);
-            this.linkLabel10.Name = "linkLabel10";
-            this.linkLabel10.Size = new System.Drawing.Size(23, 13);
-            this.linkLabel10.TabIndex = 18;
-            this.linkLabel10.TabStop = true;
-            this.linkLabel10.Text = "10°";
+            this.linkSetA0_30.AutoSize = true;
+            this.linkSetA0_30.Location = new System.Drawing.Point(40, 134);
+            this.linkSetA0_30.Name = "linkSetA0_30";
+            this.linkSetA0_30.Size = new System.Drawing.Size(23, 13);
+            this.linkSetA0_30.TabIndex = 18;
+            this.linkSetA0_30.TabStop = true;
+            this.linkSetA0_30.Text = "30°";
+            this.linkSetA0_30.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetA0_30_LinkClicked);
             // 
-            // linkLabel9
+            // linkSetA0_10
             // 
-            this.linkLabel9.AutoSize = true;
-            this.linkLabel9.Location = new System.Drawing.Point(102, 255);
-            this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(72, 13);
-            this.linkLabel9.TabIndex = 100;
-            this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "Угарный газ";
+            this.linkSetA0_10.AutoSize = true;
+            this.linkSetA0_10.Location = new System.Drawing.Point(11, 134);
+            this.linkSetA0_10.Name = "linkSetA0_10";
+            this.linkSetA0_10.Size = new System.Drawing.Size(23, 13);
+            this.linkSetA0_10.TabIndex = 18;
+            this.linkSetA0_10.TabStop = true;
+            this.linkSetA0_10.Text = "10°";
+            this.linkSetA0_10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetA0_10_LinkClicked);
             // 
-            // linkLabel8
+            // linkSetB_8
             // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Location = new System.Drawing.Point(102, 233);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(37, 13);
-            this.linkLabel8.TabIndex = 100;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "Гелий";
+            this.linkSetB_8.AutoSize = true;
+            this.linkSetB_8.Location = new System.Drawing.Point(102, 255);
+            this.linkSetB_8.Name = "linkSetB_8";
+            this.linkSetB_8.Size = new System.Drawing.Size(32, 13);
+            this.linkSetB_8.TabIndex = 100;
+            this.linkSetB_8.TabStop = true;
+            this.linkSetB_8.Text = "Вода";
+            this.linkSetB_8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_8_LinkClicked);
             // 
-            // linkLabel5
+            // linkSetB_7
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(6, 255);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(90, 13);
-            this.linkLabel5.TabIndex = 100;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Углекислый газ";
+            this.linkSetB_7.AutoSize = true;
+            this.linkSetB_7.Location = new System.Drawing.Point(102, 233);
+            this.linkSetB_7.Name = "linkSetB_7";
+            this.linkSetB_7.Size = new System.Drawing.Size(37, 13);
+            this.linkSetB_7.TabIndex = 100;
+            this.linkSetB_7.TabStop = true;
+            this.linkSetB_7.Text = "Гелий";
+            this.linkSetB_7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_7_LinkClicked);
             // 
-            // linkLabel7
+            // linkSetB_4
             // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Location = new System.Drawing.Point(102, 211);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(48, 13);
-            this.linkLabel7.TabIndex = 100;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Аммиак";
+            this.linkSetB_4.AutoSize = true;
+            this.linkSetB_4.Location = new System.Drawing.Point(6, 255);
+            this.linkSetB_4.Name = "linkSetB_4";
+            this.linkSetB_4.Size = new System.Drawing.Size(90, 13);
+            this.linkSetB_4.TabIndex = 100;
+            this.linkSetB_4.TabStop = true;
+            this.linkSetB_4.Text = "Углекислый газ";
+            this.linkSetB_4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_4_LinkClicked);
             // 
-            // linkLabel4
+            // linkSetB_6
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(6, 233);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(56, 13);
-            this.linkLabel4.TabIndex = 100;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Кислород";
+            this.linkSetB_6.AutoSize = true;
+            this.linkSetB_6.Location = new System.Drawing.Point(102, 211);
+            this.linkSetB_6.Name = "linkSetB_6";
+            this.linkSetB_6.Size = new System.Drawing.Size(31, 13);
+            this.linkSetB_6.TabIndex = 100;
+            this.linkSetB_6.TabStop = true;
+            this.linkSetB_6.Text = "Азот";
+            this.linkSetB_6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_6_LinkClicked);
             // 
-            // linkLabel6
+            // linkSetB_3
             // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(102, 189);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(50, 13);
-            this.linkLabel6.TabIndex = 100;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Водород";
+            this.linkSetB_3.AutoSize = true;
+            this.linkSetB_3.Location = new System.Drawing.Point(6, 233);
+            this.linkSetB_3.Name = "linkSetB_3";
+            this.linkSetB_3.Size = new System.Drawing.Size(56, 13);
+            this.linkSetB_3.TabIndex = 100;
+            this.linkSetB_3.TabStop = true;
+            this.linkSetB_3.Text = "Кислород";
+            this.linkSetB_3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_3_LinkClicked);
             // 
-            // linkLabel3
+            // linkSetB_5
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(6, 211);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(31, 13);
-            this.linkLabel3.TabIndex = 100;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Азот";
+            this.linkSetB_5.AutoSize = true;
+            this.linkSetB_5.Location = new System.Drawing.Point(102, 189);
+            this.linkSetB_5.Name = "linkSetB_5";
+            this.linkSetB_5.Size = new System.Drawing.Size(50, 13);
+            this.linkSetB_5.TabIndex = 100;
+            this.linkSetB_5.TabStop = true;
+            this.linkSetB_5.Text = "Водород";
+            this.linkSetB_5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_5_LinkClicked);
             // 
-            // linkLabel2
+            // linkSetB_2
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(6, 189);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(42, 13);
-            this.linkLabel2.TabIndex = 100;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Воздух";
+            this.linkSetB_2.AutoSize = true;
+            this.linkSetB_2.Location = new System.Drawing.Point(6, 211);
+            this.linkSetB_2.Name = "linkSetB_2";
+            this.linkSetB_2.Size = new System.Drawing.Size(37, 13);
+            this.linkSetB_2.TabIndex = 100;
+            this.linkSetB_2.TabStop = true;
+            this.linkSetB_2.Text = "Аргон";
+            this.linkSetB_2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_2_LinkClicked);
+            // 
+            // linkSetB_1
+            // 
+            this.linkSetB_1.AutoSize = true;
+            this.linkSetB_1.Location = new System.Drawing.Point(6, 189);
+            this.linkSetB_1.Name = "linkSetB_1";
+            this.linkSetB_1.Size = new System.Drawing.Size(42, 13);
+            this.linkSetB_1.TabIndex = 100;
+            this.linkSetB_1.TabStop = true;
+            this.linkSetB_1.Text = "Воздух";
+            this.linkSetB_1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSetB_1_LinkClicked);
             // 
             // StopButton
             // 
             this.StopButton.Enabled = false;
-            this.StopButton.Location = new System.Drawing.Point(98, 280);
+            this.StopButton.Location = new System.Drawing.Point(69, 280);
             this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(84, 23);
+            this.StopButton.Size = new System.Drawing.Size(50, 23);
             this.StopButton.TabIndex = 11;
             this.StopButton.Text = "Стоп";
             this.StopButton.UseVisualStyleBackColor = true;
-            this.StopButton.Click += new System.EventHandler(this.PauseButton_Click);
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // StartButton
             // 
             this.StartButton.Enabled = false;
-            this.StartButton.Location = new System.Drawing.Point(6, 280);
+            this.StartButton.Location = new System.Drawing.Point(13, 280);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(84, 23);
+            this.StartButton.Size = new System.Drawing.Size(50, 23);
             this.StartButton.TabIndex = 10;
             this.StartButton.Text = "Пуск";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -299,8 +328,18 @@
             // 
             // bVal
             // 
-            this.bVal.DecimalPlaces = 1;
+            this.bVal.DecimalPlaces = 2;
+            this.bVal.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.bVal.Location = new System.Drawing.Point(56, 157);
+            this.bVal.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.bVal.Name = "bVal";
             this.bVal.Size = new System.Drawing.Size(80, 20);
             this.bVal.TabIndex = 4;
@@ -315,6 +354,11 @@
             0,
             0});
             this.aVal.Location = new System.Drawing.Point(56, 111);
+            this.aVal.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
             this.aVal.Name = "aVal";
             this.aVal.Size = new System.Drawing.Size(80, 20);
             this.aVal.TabIndex = 3;
@@ -328,13 +372,23 @@
             // v0Val
             // 
             this.v0Val.DecimalPlaces = 1;
+            this.v0Val.Increment = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.v0Val.Location = new System.Drawing.Point(56, 65);
+            this.v0Val.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.v0Val.Name = "v0Val";
             this.v0Val.Size = new System.Drawing.Size(80, 20);
             this.v0Val.TabIndex = 2;
             this.v0Val.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.v0Val.Value = new decimal(new int[] {
-            20,
+            200,
             0,
             0,
             0});
@@ -343,11 +397,16 @@
             // 
             this.mVal.DecimalPlaces = 3;
             this.mVal.Increment = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
-            65536});
+            0});
             this.mVal.Location = new System.Drawing.Point(56, 19);
+            this.mVal.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.mVal.Minimum = new decimal(new int[] {
             1,
             0,
@@ -358,7 +417,7 @@
             this.mVal.TabIndex = 1;
             this.mVal.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.mVal.Value = new decimal(new int[] {
-            5,
+            25,
             0,
             0,
             0});
@@ -471,16 +530,27 @@
             this.SetDefaults.TabIndex = 12;
             this.SetDefaults.TabStop = true;
             this.SetDefaults.Text = "Настройки осей по умолчанию";
+            this.SetDefaults.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SetDefaults_LinkClicked);
             // 
             // aMaxVal
             // 
             this.aMaxVal.DecimalPlaces = 1;
+            this.aMaxVal.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.aMaxVal.Location = new System.Drawing.Point(56, 111);
+            this.aMaxVal.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.aMaxVal.Minimum = new decimal(new int[] {
-            5,
+            50,
             0,
             0,
-            65536});
+            0});
             this.aMaxVal.Name = "aMaxVal";
             this.aMaxVal.Size = new System.Drawing.Size(80, 20);
             this.aMaxVal.TabIndex = 9;
@@ -494,9 +564,19 @@
             // vMaxVal
             // 
             this.vMaxVal.DecimalPlaces = 1;
+            this.vMaxVal.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.vMaxVal.Location = new System.Drawing.Point(56, 88);
+            this.vMaxVal.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.vMaxVal.Minimum = new decimal(new int[] {
-            1,
+            50,
             0,
             0,
             0});
@@ -505,7 +585,7 @@
             this.vMaxVal.TabIndex = 8;
             this.vMaxVal.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.vMaxVal.Value = new decimal(new int[] {
-            20,
+            50,
             0,
             0,
             0});
@@ -513,9 +593,19 @@
             // tMaxVal
             // 
             this.tMaxVal.DecimalPlaces = 1;
+            this.tMaxVal.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.tMaxVal.Location = new System.Drawing.Point(56, 65);
+            this.tMaxVal.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.tMaxVal.Minimum = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});
@@ -524,7 +614,7 @@
             this.tMaxVal.TabIndex = 7;
             this.tMaxVal.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.tMaxVal.Value = new decimal(new int[] {
-            10,
+            30,
             0,
             0,
             0});
@@ -533,18 +623,18 @@
             // 
             this.yMaxVal.DecimalPlaces = 1;
             this.yMaxVal.Increment = new decimal(new int[] {
-            5,
+            1000,
             0,
             0,
             0});
             this.yMaxVal.Location = new System.Drawing.Point(56, 42);
             this.yMaxVal.Maximum = new decimal(new int[] {
-            1000,
+            1000000,
             0,
             0,
             0});
             this.yMaxVal.Minimum = new decimal(new int[] {
-            5,
+            1000,
             0,
             0,
             0});
@@ -553,7 +643,7 @@
             this.yMaxVal.TabIndex = 6;
             this.yMaxVal.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.yMaxVal.Value = new decimal(new int[] {
-            50,
+            1000,
             0,
             0,
             0});
@@ -562,18 +652,18 @@
             // 
             this.xMaxVal.DecimalPlaces = 1;
             this.xMaxVal.Increment = new decimal(new int[] {
-            5,
+            1000,
             0,
             0,
             0});
             this.xMaxVal.Location = new System.Drawing.Point(56, 19);
             this.xMaxVal.Maximum = new decimal(new int[] {
-            1000,
+            1000000,
             0,
             0,
             0});
             this.xMaxVal.Minimum = new decimal(new int[] {
-            5,
+            1000,
             0,
             0,
             0});
@@ -582,7 +672,7 @@
             this.xMaxVal.TabIndex = 5;
             this.xMaxVal.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.xMaxVal.Value = new decimal(new int[] {
-            100,
+            1000,
             0,
             0,
             0});
@@ -753,6 +843,12 @@
             this.label20.TabIndex = 15;
             this.label20.Text = "Ускорение";
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 10;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Form
             // 
             this.AcceptButton = this.StartButton;
@@ -831,27 +927,29 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button RebuildButton;
-        private System.Windows.Forms.LinkLabel linkLabel9;
-        private System.Windows.Forms.LinkLabel linkLabel8;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel7;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkSetB_8;
+        private System.Windows.Forms.LinkLabel linkSetB_7;
+        private System.Windows.Forms.LinkLabel linkSetB_4;
+        private System.Windows.Forms.LinkLabel linkSetB_6;
+        private System.Windows.Forms.LinkLabel linkSetB_3;
+        private System.Windows.Forms.LinkLabel linkSetB_5;
+        private System.Windows.Forms.LinkLabel linkSetB_2;
+        private System.Windows.Forms.LinkLabel linkSetB_1;
         private System.Windows.Forms.LinkLabel SetDefaults;
         private System.Windows.Forms.PictureBox mainGr;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.PictureBox topGr;
         private System.Windows.Forms.PictureBox botGr;
-        private System.Windows.Forms.LinkLabel linkLabel15;
-        private System.Windows.Forms.LinkLabel linkLabel14;
-        private System.Windows.Forms.LinkLabel linkLabel13;
-        private System.Windows.Forms.LinkLabel linkLabel12;
-        private System.Windows.Forms.LinkLabel linkLabel11;
-        private System.Windows.Forms.LinkLabel linkLabel10;
+        private System.Windows.Forms.LinkLabel linkSetA0_90;
+        private System.Windows.Forms.LinkLabel linkSetA0_75;
+        private System.Windows.Forms.LinkLabel linkSetA0_60;
+        private System.Windows.Forms.LinkLabel linkSetA0_45;
+        private System.Windows.Forms.LinkLabel linkSetA0_30;
+        private System.Windows.Forms.LinkLabel linkSetA0_10;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button PauseButton;
+        private System.Windows.Forms.Timer timer;
     }
 }
 

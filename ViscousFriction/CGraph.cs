@@ -105,7 +105,7 @@ namespace ViscousFriction
             try
             {
                 if (fromCenter) { x += grCenter.X; y = grCenter.Y - y; }
-                gr.DrawRectangle(new Pen(new SolidBrush(c), 3), x, y, 1, 1);
+                gr.DrawRectangle(new Pen(new SolidBrush(c), 1), x, y, 1, 1);
                 return true;
             }
             catch (Exception) { return false; }
@@ -126,6 +126,28 @@ namespace ViscousFriction
                 return AddDot((int)((double)gridStepX / grScaleX * x), (int)((double)gridStepY / grScaleY * y), c, true);
             }
             catch (Exception) { return false; }
+        }
+
+        static public void Add2All(double t, double x, double y, double Vx, double Vy, double ax, double ay)
+        {
+            lock (Form.gr[0])
+            {
+                Form.gr[0].AddGraphDot(x, y);
+            }
+
+            lock (Form.gr[1])
+            {
+                Form.gr[1].AddGraphDot(t, Vx, System.Drawing.Color.Red);
+                Form.gr[1].AddGraphDot(t, Vy, System.Drawing.Color.Blue);
+                Form.gr[1].AddGraphDot(t, Math.Sqrt(Vx * Vx + Vy * Vy), System.Drawing.Color.Green);
+            }
+
+            lock (Form.gr[2])
+            {
+                Form.gr[2].AddGraphDot(t, ax, System.Drawing.Color.Red);
+                Form.gr[2].AddGraphDot(t, ay, System.Drawing.Color.Blue);
+                Form.gr[2].AddGraphDot(t, Math.Sqrt(ax * ax + ay * ay), System.Drawing.Color.Green);
+            }
         }
     }
 }

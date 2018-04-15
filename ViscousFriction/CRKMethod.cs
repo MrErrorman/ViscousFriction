@@ -73,11 +73,11 @@
         /// Следующий шаг метода Рунге-Кутта
         /// </summary>
         /// <param name="dt">текущий шаг по времени (может быть переменным)</param>
-        public void NextStep(double dt)
+        public double[] NextStep(double dt)
         {
             int i;
 
-            if (dt < 0) return;
+            if (dt < 0) throw new System.Exception();
 
             // рассчитать Y1
             Y1 = F(t, Y);
@@ -106,6 +106,8 @@
 
             // рассчитать текущее время
             t = t + dt;
+
+            return FY;
         }
     }
 }

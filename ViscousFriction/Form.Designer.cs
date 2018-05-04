@@ -547,7 +547,7 @@
             0,
             0});
             this.aMaxVal.Minimum = new decimal(new int[] {
-            50,
+            1,
             0,
             0,
             0});
@@ -576,7 +576,7 @@
             0,
             0});
             this.vMaxVal.Minimum = new decimal(new int[] {
-            50,
+            1,
             0,
             0,
             0});

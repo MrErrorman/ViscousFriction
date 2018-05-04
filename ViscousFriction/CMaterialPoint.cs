@@ -24,7 +24,7 @@ namespace ViscousFriction
             // x - Y[0], y - Y[1], Vx - Y[2], Vy - Y[3]
             // dx/dt - FY[0] , dy/dt - FY[1] , dVx/dt - FY[2] , dVy/dt - FY[3]
 
-            b = b0 * Math.Exp(Y[1] / 8000);
+            b = b0 * Math.Exp(- Y[1] / 8000);
 
             FY[0] = Y[2];
             FY[1] = Y[3];
@@ -37,6 +37,20 @@ namespace ViscousFriction
         public void Step()
         {
             NextStep(0.01);
+
+            if (Y[1] <= 0)
+            {
+                Y[0] = 0;
+                Y[1] = 0;
+                Y[2] = 0;
+                Y[3] = 0;
+
+                FY[0] = 0;
+                FY[1] = 0;
+                FY[2] = 0;
+                FY[3] = 0;
+            }
+
             CGraph.Add2All(t, Y[0], Y[1], Y[2], Y[3], FY[2], FY[3]);
         }
     }
